@@ -2,14 +2,10 @@
 	.header {
 		&__inner {}
 
-		&-title {
-			margin: 5px;
-		}
+		&-title {}
 
 		&-logout {
-			&__btn {
-				font-size: .7rem;
-			}
+			&__btn {}
 		}
 	}
 }

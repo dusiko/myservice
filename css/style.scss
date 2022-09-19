@@ -1,6 +1,5 @@
 .header {
 	text-align: center;
-	background-color: rgb(254, 255, 213);
 
 	&__inner {
 		position: relative;
@@ -13,10 +12,82 @@
 
 	&-logout {
 		position: absolute;
-		top: -10%;
+		top: 0;
 		right: 0;
 	}
+
+	border-bottom: 1px solid #CCCCCC;
 }
+
+// =============
+// ======== wrapper =====//
+.wrapper {
+	padding-top: 20px;
+}
+
+.controls {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	list-style: none;
+	gap: 15px;
+	border-bottom: 1px solid #e30613;
+	padding-left: 0;
+
+	&__item {
+		padding: 15px 60px;
+		border-radius: 10px 10px 0 0;
+		cursor: pointer;
+		border-bottom: transparent;
+
+		&:hover {
+			color: black;
+		}
+
+		&.active {
+			border: 1px solid #e30613;
+			border-bottom: none;
+			color: #e30613;
+		}
+
+		&-link {
+			text-decoration: none;
+			color: #C4B3BA;
+
+		}
+	}
+}
+
+.active {
+	border: 1px solid #e30613;
+	border-bottom-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @import "media/768.scss";
 @import "media/425.scss";
