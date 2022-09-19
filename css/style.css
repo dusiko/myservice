@@ -1,3 +1,27 @@
+.header {
+  text-align: center;
+  background-color: #feffd5; }
+  .header__inner {
+    position: relative; }
+  .header-title {
+    font-weight: bold;
+    font-size: 1.7rem; }
+  .header-logout {
+    position: absolute;
+    top: -10%;
+    right: 0; }
 
+@media (max-width: 768px) {
+  .header {
+    text-align: left; }
+    .header-title {
+      font-size: 1.4rem; }
+    .header-logout {
+      top: -20%; } }
+@media (max-width: 425px) {
+  .header-title {
+    margin: 5px; }
+  .header-logout__btn {
+    font-size: .7rem; } }
 
 /*# sourceMappingURL=style.css.map */

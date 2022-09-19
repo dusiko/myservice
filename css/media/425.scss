@@ -1,0 +1,15 @@
+@media (max-width: 425px) {
+	.header {
+		&__inner {}
+
+		&-title {
+			margin: 5px;
+		}
+
+		&-logout {
+			&__btn {
+				font-size: .7rem;
+			}
+		}
+	}
+}

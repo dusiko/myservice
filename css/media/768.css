@@ -1,0 +1,9 @@
+@media (max-width: 768px) {
+  .header {
+    text-align: left; }
+    .header-title {
+      font-size: 1.4rem; }
+    .header-logout {
+      top: -20%; } }
+
+/*# sourceMappingURL=768.css.map */

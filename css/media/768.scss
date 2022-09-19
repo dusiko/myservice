@@ -1,0 +1,15 @@
+@media (max-width: 768px) {
+	.header {
+		text-align: left;
+
+		&__inner {}
+
+		&-title {
+			font-size: 1.4rem;
+		}
+
+		&-logout {
+			top: -20%;
+		}
+	}
+}

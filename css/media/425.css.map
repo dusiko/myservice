@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,yBAA0B;EAIxB,aAAQ;IACP,MAAM,EAAE,GAAG;EAIX,mBAAO;IACN,SAAS,EAAE,KAAK",
+"sources": ["425.scss"],
+"names": [],
+"file": "425.css"
+}
