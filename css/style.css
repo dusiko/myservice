@@ -1,5 +1,6 @@
 .header {
   text-align: center;
+  padding-top: 15px;
   border-bottom: 1px solid #CCCCCC; }
   .header__inner {
     position: relative; }
