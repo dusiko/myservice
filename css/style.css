@@ -43,9 +43,18 @@
   border-bottom-color: transparent; }
 
 @media (max-width: 768px) {
+  .container {
+    max-width: 738px; }
+
   .header {
     text-align: left; }
     .header-title {
       font-size: 1.6rem; } }
+@media (max-width: 425px) {
+  .container {
+    max-width: 395px; }
+
+  .controls__item {
+    padding: 15px 35.5px; } }
 
 /*# sourceMappingURL=style.css.map */

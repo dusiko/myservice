@@ -1,3 +1,8 @@
+@media (max-width: 425px) {
+  .container {
+    max-width: 395px; }
 
+  .controls__item {
+    padding: 15px 35.5px; } }
 
 /*# sourceMappingURL=425.css.map */

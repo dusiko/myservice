@@ -1,4 +1,8 @@
 @media (max-width: 425px) {
+	.container {
+		max-width: 395px;
+	}
+
 	.header {
 		&__inner {}
 
@@ -8,4 +12,21 @@
 			&__btn {}
 		}
 	}
+
+	// =============
+	// ======== wrapper =====//
+	.wrapper {}
+
+	.controls {
+
+		&__item {
+			padding: 15px 35.5px;
+
+			&.active {}
+
+			&-link {}
+		}
+	}
+
+	.active {}
 }
