@@ -20,12 +20,8 @@
 	border-bottom: 1px solid #CCCCCC;
 }
 
-// =============
-// ======== wrapper =====//
-.wrapper {
-	padding-top: 20px;
-}
-
+// controls 
+// =======================
 .controls {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -35,28 +31,35 @@
 	gap: 15px;
 	border-bottom: 1px solid #e30613;
 	padding-left: 0;
+	padding-top: 16px;
 
 	&__item {
-		padding: 15px 60px;
-		border-radius: 10px 10px 0 0;
-		cursor: pointer;
-		border-bottom: transparent;
+
 
 		&:hover {
 			color: black;
 		}
 
-		&.active {
-			border: 1px solid #e30613;
-			border-bottom: none;
-			color: #e30613;
-		}
-
 		&-link {
+			padding: 15px 60px;
+			border-radius: 10px 10px 0 0;
+			cursor: pointer;
+			border-bottom: transparent;
+			color: #C4B3BA;
+
+			display: inline-block;
 			text-decoration: none;
 			color: #C4B3BA;
 
+			&.active {
+				border: 1px solid #e30613;
+				border-bottom: none;
+				color: #e30613;
+				cursor: default;
+			}
+
 		}
+
 	}
 }
 
@@ -64,6 +67,13 @@
 	border: 1px solid #e30613;
 	border-bottom-color: transparent;
 }
+
+// =============
+// ======== wrapper =====//
+
+.wrapper {}
+
+
 
 
 

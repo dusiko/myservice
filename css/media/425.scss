@@ -13,20 +13,23 @@
 		}
 	}
 
-	// =============
-	// ======== wrapper =====//
-	.wrapper {}
-
 	.controls {
 
 		&__item {
-			padding: 15px 35.5px;
+
 
 			&.active {}
 
-			&-link {}
+			&-link {
+				padding: 15px 35.5px;
+			}
+
 		}
 	}
 
 	.active {}
+
+	.wrapper {}
+
+
 }
