@@ -46,7 +46,6 @@
 			cursor: pointer;
 			border-bottom: transparent;
 			color: #C4B3BA;
-
 			display: inline-block;
 			text-decoration: none;
 			color: #C4B3BA;
@@ -71,12 +70,71 @@
 // =============
 // ======== wrapper =====//
 
-.wrapper {}
+.service-list {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	height: 1000px;
+	overflow-x: scroll;
+	position: relative;
+	font-size: 14px;
+
+
+	&__row {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: justify;
+		-webkit-justify-content: space-between;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		gap: 5px;
+		text-align: center;
+		min-width: 1000px;
+		min-height: 50px;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+		border-bottom: 1px solid #EEEEEE;
+
+		&:nth-child(odd) {}
 
 
 
+		&:first-child {
+			font-weight: bold;
+			color: #606060;
+			background-color: #EEEEEE;
+		}
 
+		&-item {
 
+			&:nth-child(1) {
+				min-width: 75px;
+			}
+
+			&:nth-child(5),
+			&:nth-child(3),
+			&:nth-child(4) {
+				min-width: 150px;
+
+			}
+
+			&:nth-child(2) {
+				min-width: 250px;
+			}
+
+		}
+	}
+}
 
 
 
