@@ -83,12 +83,16 @@
       background-color: #EEEEEE; }
     .service-list__row-item:nth-child(1) {
       width: 75px; }
-    .service-list__row-item:nth-child(3), .service-list__row-item:nth-child(5), .service-list__row-item:nth-child(6) {
+    .service-list__row-item:nth-child(3), .service-list__row-item:nth-child(5), .service-list__row-item:nth-child(6), .service-list__row-item:nth-child(7), .service-list__row-item:nth-child(8) {
       width: 100px; }
     .service-list__row-item:nth-child(2), .service-list__row-item:nth-child(4) {
       width: 250px; }
-    .service-list__row .service-address {
-      cursor: pointer; }
+  .service-list.editing .service-address, .service-list.editing .service-send, .service-list.editing .service-back, .service-list.editing .service-done-input {
+    cursor: pointer; }
+
+.btn-editing-save {
+  display: none;
+  margin-left: 5px; }
 
 @media (max-width: 768px) {
   .container {

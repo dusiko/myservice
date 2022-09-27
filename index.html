@@ -42,46 +42,74 @@
 	</section>
 	<main class="wrapper">
 		<div class="container">
-			<div class="service-list">
+			<div class="service-list editing">
 				<div class="service-list__row title">
 					<div class="service-list__row-item title">ВХ</div>
 					<div class="service-list__row-item title">Назва</div>
 					<div class="service-list__row-item title">Дата відправлення</div>
 					<div class="service-list__row-item title">Адреса сервіса</div>
 					<div class="service-list__row-item title">Дата прибуття</div>
-					<div class="service-list__row-item title">Видано</div>
+					<div class="service-list__row-item title">Статус</div>
+					<div class="service-list__row-item title">Видано покупцю</div>
+					<div class="service-list__row-item title service-delete-title">Видалити</div>
 				</div>
 				<div class="service-list__row">
 					<div class="service-list__row-item">201/11</div>
 					<div class="service-list__row-item">Мотокоса бензинова AL-KO FRS 4125</div>
-					<div class="service-list__row-item">10.10.2022</div>
+					<div class="service-list__row-item service-send" data-bs-toggle="modal" data-bs-target="#service-modal">
+						--.--.--</div>
 					<div class="service-list__row-item service-address" data-bs-toggle="modal"
-						data-bs-target="#service-address-modal">Вкажіть адресу сервіс-центра</div>
-					<div class="service-list__row-item">25.10.2022</div>
-					<div class="service-list__row-item"><input type="checkbox" name="client-took"></div>
-				</div>
-				<div class="service-list__row">
-					<div class="service-list__row-item">201/11</div>
-					<div class="service-list__row-item">Мотокоса бензинова AL-KO FRS 4125</div>
-					<div class="service-list__row-item">10.10.2022s</div>
-					<div class="service-list__row-item service-address" data-bs-toggle="modal"
-						data-bs-target="#service-address-modal">Вкажіть адресу сервіс-центра</div>
-					<div class="service-list__row-item">25.10.2022</div>
-					<div class="service-list__row-item"><input type="checkbox" name="client-took" checked></div>
-				</div>
-				<div class="service-list__row">
-					<div class="service-list__row-item">201/11</div>
-					<div class="service-list__row-item">Мотокоса бензинова AL-KO FRS 4125</div>
-					<div class="service-list__row-item">10.10.2022</div>
-					<div class="service-list__row-item service-address" data-bs-toggle="modal"
-						data-bs-target="#service-address-modal">м.Мукачево,
-						вул.Берегівська 31
+						data-bs-target="#service-modal">Вкажіть адресу сервіс-центра</div>
+					<div class="service-list__row-item service-back" data-bs-toggle="modal" data-bs-target="#service-modal">
+						--.--.--
 					</div>
-					<div class="service-list__row-item">25.10.2022</div>
-					<div class="service-list__row-item"><input type="checkbox" name="client-took"></div>
+					<div class="service-list__row-item service-status">Невідомо</div>
+					<div class="service-list__row-item service-done"><input class="service-done-input" type="checkbox"
+							name="client-took">
+					</div>
+					<div class="service-list__row-item service-delete"><button type="button"
+							class="btn btn-danger btn-sm">-</button>
+					</div>
+				</div>
+				<div class="service-list__row">
+					<div class="service-list__row-item">201/11</div>
+					<div class="service-list__row-item">Мотокоса бензинова AL-KO FRS 4125</div>
+					<div class="service-list__row-item service-send" data-bs-toggle="modal" data-bs-target="#service-modal">
+						--.--.--</div>
+					<div class="service-list__row-item service-address" data-bs-toggle="modal"
+						data-bs-target="#service-modal">Вкажіть адресу сервіс-центра</div>
+					<div class="service-list__row-item service-back" data-bs-toggle="modal" data-bs-target="#service-modal">
+						--.--.--
+					</div>
+					<div class="service-list__row-item service-status">Невідомо</div>
+					<div class="service-list__row-item service-done"><input class="service-done-input" type="checkbox"
+							name="client-took" checked></div>
+					<div class="service-list__row-item service-delete"><button type="button"
+							class="btn btn-danger btn-sm">-</button></div>
+				</div>
+
+				<div class="service-list__row">
+					<div class="service-list__row-item">201/11</div>
+					<div class="service-list__row-item">Мотокоса бензинова AL-KO FRS 4125</div>
+					<div class="service-list__row-item service-send" data-bs-toggle="modal" data-bs-target="#service-modal">
+						--.--.--</div>
+					<div class="service-list__row-item service-address" data-bs-toggle="modal"
+						data-bs-target="#service-modal">Вкажіть адресу сервіс-центра
+					</div>
+					<div class="service-list__row-item service-back" data-bs-toggle="modal" data-bs-target="#service-modal">
+						--.--.--
+					</div>
+					<div class="service-list__row-item service-status">Невідомо</div>
+					<div class="service-list__row-item service-done"><input class="service-done-input" type="checkbox"
+							name="client-took">
+					</div>
+					<div class="service-list__row-item service-delete"><button type="button"
+							class="btn btn-danger btn-sm">-</button></div>
 				</div>
 			</div>
-			<div class="d-flex justify-content-end mt-1"><button type="button" class="btn btn-primary text-end">Зберегти
+			<div class="d-flex justify-content-end mt-1">
+				<button type="button" class="btn-editing-switch btn btn-warning btn-sm">Перейти в режим перегляду</button>
+				<button type="button" class="btn-editing-save btn btn-primary text-center btn-sm">Зберегти
 					зміни</button>
 			</div>
 
@@ -89,19 +117,18 @@
 	</main>
 
 	<!-- Modal -->
-	<div class="modal fade" id="service-address-modal" tabindex="-1" aria-labelledby="service-address-modal"
-		aria-hidden="true">
+	<div class="modal fade" id="service-modal" tabindex="-1" aria-labelledby="service-modal" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="service-address-modal">Адреса сервіс-центра</h5>
+					<h5 class="modal-title" id="service-modal-title">title</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
 					<div class="input-group input-group-sm mb-3">
-						<span class="input-group-text" id="inputGroup-sizing-sm">Адреса</span>
+						<span class="input-group-text modal-text" id="inputGroup-sizing-sm">text</span>
 						<input type="text" class="form-control" aria-label="Sizing example input"
-							aria-describedby="inputGroup-sizing-sm" placeholder="Введи сюди" id="modal-address-input"
+							aria-describedby="inputGroup-sizing-sm" placeholder="Введи сюди" id="service-modal-input"
 							list="address-list">
 						<datalist id="address-list">
 							<option value="м.Мукачево вул.Берегівська 31"></option>

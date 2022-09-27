@@ -129,9 +129,10 @@
 
 			&:nth-child(3),
 			&:nth-child(5),
-			&:nth-child(6) {
+			&:nth-child(6),
+			&:nth-child(7),
+			&:nth-child(8) {
 				width: 100px;
-
 			}
 
 			&:nth-child(2),
@@ -142,14 +143,21 @@
 
 
 		}
-
-		.service-address {
-			cursor: pointer;
-		}
 	}
+
+	&.editing .service-address,
+	&.editing .service-send,
+	&.editing .service-back,
+	&.editing .service-done-input {
+		cursor: pointer;
+	}
+
 }
 
-
+.btn-editing-save {
+	display: none;
+	margin-left: 5px;
+}
 
 
 
