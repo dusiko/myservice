@@ -17,6 +17,7 @@ function changingValuesInList(event) {
 		const input = document.querySelector('#service-modal-input')
 		const title = document.getElementById('service-modal-title')
 		const text = document.querySelector('.modal-text')
+		input.setAttribute('list', 'address-list')
 		input.setAttribute('type', 'text')
 		text.innerText = 'Адреса'
 		title.innerText = 'Адреса сервіс-центра'
@@ -65,7 +66,24 @@ function changingValuesInList(event) {
 			else
 				block.innerText = address.split('-').reverse().join('.')
 		}
-
+	} else if (event.target.classList.contains('service-status')) {
+		const input = document.querySelector('#service-modal-input')
+		const title = document.getElementById('service-modal-title')
+		const text = document.querySelector('.modal-text')
+		input.setAttribute('list', 'status-list')
+		input.setAttribute('type', 'text')
+		text.innerText = 'Статус'
+		title.innerText = 'Статус заявки'
+		input.value = ''
+		const block = event.target
+		const btn = document.getElementById('modalOkBtn')
+		btn.onclick = () => {
+			const status = input.value
+			if (status.trim().length < 1)
+				block.innerText = 'Невідомо'
+			else
+				block.innerText = status
+		}
 	}
 }
 
@@ -81,7 +99,7 @@ function switchEditing() {
 
 		// Вимкнув Поп-ап клік на ДатаВідправлення, Адрес, ДатаПовернення
 		document.querySelector('.service-list').removeEventListener('click', changingValuesInList)
-		const AddressSendBackitems = document.querySelectorAll('.service-send, .service-address, .service-back')
+		const AddressSendBackitems = document.querySelectorAll('.service-send, .service-address, .service-back, .service-status')
 		AddressSendBackitems.forEach(item => item.removeAttribute('data-bs-toggle', 'modal'))
 
 		// Видано покупцю блок
@@ -107,7 +125,7 @@ function switchEditing() {
 		btnSave.style.display = 'block'
 		// Включив Поп-ап клік на ДатаВідправлення, Адрес, ДатаПовернення
 		document.querySelector('.service-list').addEventListener('click', changingValuesInList)
-		const AddressSendBackitems = document.querySelectorAll('.service-send, .service-address, .service-back')
+		const AddressSendBackitems = document.querySelectorAll('.service-send, .service-address, .service-back, .service-status')
 		AddressSendBackitems.forEach(item => item.setAttribute('data-bs-toggle', 'modal'))
 
 		// Видано покупцю блок
