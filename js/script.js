@@ -87,84 +87,83 @@ function changingValuesInList(event) {
 	}
 }
 
-function switchEditing() {
+function switchEditing(event) {
 	const service = document.querySelector('.service-list')
-	const btn = document.querySelector('.btn-editing-switch')
 	const btnSave = document.querySelector('.btn-editing-save')
-	if (service.classList.contains('editing')) {
-		// Режим редагування ВИМКНУЛИ
-		service.classList.remove('editing')
-		btn.innerText = 'Перейти в режим редагування'
-		btnSave.style.display = 'none'
+	if (event.target.classList.contains('switch-input')) {
+		if (service.classList.contains('editing')) {
+			// Режим редагування ВИМКНУЛИ
+			service.classList.remove('editing')
+			btnSave.style.display = 'none'
 
-		// Вимкнув Поп-ап клік на ДатаВідправлення, Адрес, ДатаПовернення
-		document.querySelector('.service-list').removeEventListener('click', changingValuesInList)
-		const AddressSendBackitems = document.querySelectorAll('.service-send, .service-address, .service-back, .service-status')
-		AddressSendBackitems.forEach(item => item.removeAttribute('data-bs-toggle', 'modal'))
+			// Вимкнув Поп-ап клік на ДатаВідправлення, Адрес, ДатаПовернення
+			document.querySelector('.service-list').removeEventListener('click', changingValuesInList)
+			const AddressSendBackitems = document.querySelectorAll('.service-send, .service-address, .service-back, .service-status')
+			AddressSendBackitems.forEach(item => item.removeAttribute('data-bs-toggle', 'modal'))
 
-		// Видано покупцю блок
-		const serviceDone = document.querySelectorAll('.service-done')
-		serviceDone.forEach(item => {
-			if (item.childNodes[0].checked)
-				item.innerText = 'Так'
-			else
-				item.innerText = 'Ні'
-		})
+			// Видано покупцю блок
+			const serviceDone = document.querySelectorAll('.service-done')
+			serviceDone.forEach(item => {
+				if (item.childNodes[0].checked)
+					item.innerText = 'Так'
+				else
+					item.innerText = 'Ні'
+			})
 
-		// Блок з видаленням
-		const deleteItems = document.querySelectorAll('.service-delete-title, .service-delete')
-		console.log(deleteItems)
-		deleteItems.forEach(item => {
-			item.parentNode.removeChild(item)
-		})
+			// Блок з видаленням
+			const deleteItems = document.querySelectorAll('.service-delete-title, .service-delete')
+			deleteItems.forEach(item => {
+				item.parentNode.removeChild(item)
+			})
 
-	} else {
-		// Режим редагування ВКЛЮЧИЛИ
-		service.classList.add('editing')
-		btn.innerText = 'Перейти в режим перегляду'
-		btnSave.style.display = 'block'
-		// Включив Поп-ап клік на ДатаВідправлення, Адрес, ДатаПовернення
-		document.querySelector('.service-list').addEventListener('click', changingValuesInList)
-		const AddressSendBackitems = document.querySelectorAll('.service-send, .service-address, .service-back, .service-status')
-		AddressSendBackitems.forEach(item => item.setAttribute('data-bs-toggle', 'modal'))
+		} else {
+			// Режим редагування ВКЛЮЧИЛИ
+			service.classList.add('editing')
+			btnSave.style.display = 'block'
+			// Включив Поп-ап клік на ДатаВідправлення, Адрес, ДатаПовернення
+			document.querySelector('.service-list').addEventListener('click', changingValuesInList)
+			const AddressSendBackitems = document.querySelectorAll('.service-send, .service-address, .service-back, .service-status')
+			AddressSendBackitems.forEach(item => item.setAttribute('data-bs-toggle', 'modal'))
 
-		// Видано покупцю блок
-		const serviceDone = document.querySelectorAll('.service-done')
-		serviceDone.forEach(item => {
-			const input = document.createElement('input')
-			input.classList.add('service-done-input')
-			input.setAttribute('type', 'checkbox')
-			input.setAttribute('name', 'client-took')
-			if (item.innerText === 'Так')
-				input.setAttribute('checked', 'checked')
-			item.innerText = ''
-			item.appendChild(input)
-		})
+			// Видано покупцю блок
+			const serviceDone = document.querySelectorAll('.service-done')
+			serviceDone.forEach(item => {
+				const input = document.createElement('input')
+				input.classList.add('service-done-input')
+				input.setAttribute('type', 'checkbox')
+				input.setAttribute('name', 'client-took')
+				if (item.innerText === 'Так')
+					input.setAttribute('checked', 'checked')
+				item.innerText = ''
+				item.appendChild(input)
+			})
 
-		// Блок з видаленням
-		const parents = document.querySelectorAll('.service-list__row')
-		parents.forEach(item => {
-			const div = document.createElement('DIV')
-			div.classList.add('service-list__row-item')
-			if (item.classList.contains('title')) {
+			// Блок з видаленням
+			const parents = document.querySelectorAll('.service-list__row')
+			parents.forEach(item => {
+				const div = document.createElement('DIV')
 				div.classList.add('service-list__row-item')
-				div.classList.add('title')
-				div.classList.add('service-delete-title')
-				div.innerText = 'Видалити'
-			} else {
-				div.classList.add('service-delete')
-				const btn = document.createElement('button')
-				btn.setAttribute('type', 'button')
-				btn.classList.add('btn')
-				btn.classList.add('btn-danger')
-				btn.classList.add('btn-sm')
-				btn.innerText = '-'
-				div.appendChild(btn)
-			}
-			item.appendChild(div)
-		})
+				if (item.classList.contains('title')) {
+					div.classList.add('service-list__row-item')
+					div.classList.add('title')
+					div.classList.add('service-delete-title')
+					div.innerText = 'Видалити'
+				} else {
+					div.classList.add('service-delete')
+					const btn = document.createElement('button')
+					btn.setAttribute('type', 'button')
+					btn.classList.add('btn')
+					btn.classList.add('btn-danger')
+					btn.classList.add('btn-sm')
+					btn.innerText = '-'
+					div.appendChild(btn)
+				}
+				item.appendChild(div)
+			})
+		}
 	}
 }
 
-document.querySelector('.btn-editing-switch').addEventListener('click', switchEditing)
+
+document.querySelector('.switch').addEventListener('click', switchEditing)
 document.querySelector('.service-list').addEventListener('click', focus)
