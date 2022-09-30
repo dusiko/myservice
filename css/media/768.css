@@ -5,6 +5,9 @@
   .header {
     text-align: left; }
     .header-title {
-      font-size: 1.6rem; } }
+      font-size: 1.6rem; }
+
+  .controls__item-link {
+    padding: 15px 29px; } }
 
 /*# sourceMappingURL=768.css.map */
