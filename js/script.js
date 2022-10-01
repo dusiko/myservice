@@ -96,6 +96,9 @@ function switchEditing(event) {
 			service.classList.remove('editing')
 			btnSave.style.display = 'none'
 
+			//
+			document.querySelector('.service-list').removeEventListener('click', AddressOptions)
+
 			// Вимкнув Поп-ап клік на ДатаВідправлення, Адрес, ДатаПовернення
 			document.querySelector('.service-list').removeEventListener('click', changingValuesInList)
 			const AddressSendBackitems = document.querySelectorAll('.service-send, .service-address, .service-back, .service-status')
@@ -116,10 +119,17 @@ function switchEditing(event) {
 				item.parentNode.removeChild(item)
 			})
 
+
+
+
 		} else {
 			// Режим редагування ВКЛЮЧИЛИ
 			service.classList.add('editing')
 			btnSave.style.display = 'block'
+
+			// ===========================
+			document.querySelector('.service-list').addEventListener('click', AddressOptions)
+
 			// Включив Поп-ап клік на ДатаВідправлення, Адрес, ДатаПовернення
 			document.querySelector('.service-list').addEventListener('click', changingValuesInList)
 			const AddressSendBackitems = document.querySelectorAll('.service-send, .service-address, .service-back, .service-status')
@@ -164,6 +174,18 @@ function switchEditing(event) {
 	}
 }
 
+function AddressOptions(event) {
+	if (event.target.classList.contains('service-address')) {
+		const brand = event.target.parentNode.childNodes[3].childNodes[1].innerText
+		const addressList = document.querySelector('#address-list')
+		addressList.innerHTML = ''
+		if (data_address[brand]) {
+			const option = document.createElement('option')
+			option.value = data_address[brand]
+			addressList.appendChild(option)
+		}
+	}
+}
 
 document.querySelector('.switch').addEventListener('click', switchEditing)
 document.querySelector('.service-list').addEventListener('click', focus)
