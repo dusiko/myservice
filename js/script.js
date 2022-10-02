@@ -187,5 +187,7 @@ function AddressOptions(event) {
 	}
 }
 
+console.log(Array.from(document.querySelectorAll('.service-list__row')).slice(1))
+
 document.querySelector('.switch').addEventListener('click', switchEditing)
 document.querySelector('.service-list').addEventListener('click', focus)

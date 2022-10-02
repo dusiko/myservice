@@ -171,6 +171,18 @@
 
 }
 
+.pagination {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	margin-top: 5px;
+}
+
 .btn-editing-save {
 	display: none;
 	margin-left: 5px;
@@ -185,7 +197,6 @@
 	color: black;
 	cursor: pointer;
 }
-
 
 
 

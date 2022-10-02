@@ -100,6 +100,17 @@
   .service-list.editing .service-address, .service-list.editing .service-send, .service-list.editing .service-back, .service-list.editing .service-status, .service-list.editing .service-done-input {
     cursor: pointer; }
 
+.pagination {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 5px; }
+
 .btn-editing-save {
   display: none;
   margin-left: 5px; }
